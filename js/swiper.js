@@ -13,6 +13,10 @@ const swiper = new Swiper('.swiper-container', {
       },
       // when window width is >= 640px
       640: {
+        slidesPerView: 3,
+        spaceBetween: 17
+      },
+      1368: {
         slidesPerView: 4.3,
         spaceBetween: 17
       }
