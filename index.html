@@ -251,6 +251,27 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
 
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("./assets/product-list.json", function (data) {
+                let categories = data.responses[0][0].params.userCategories;
+                categories.map(function (category) {
+                    const myArr = category.split(">");
+                });
+
+
+                let products = data.responses[0][0].params.recommendedProducts;
+                let productsKeys= Object.keys(products);
+                console.log(productsKeys);
+                console.log(products[productsKeys[1]]);
+
+                
+            }).fail(function () {
+                console.log("Hata Dosya Okunamadı...");
+            });
+        });
+    </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="./js/swiper.js"></script>
