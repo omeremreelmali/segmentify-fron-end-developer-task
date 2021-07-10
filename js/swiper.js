@@ -1,5 +1,5 @@
 const swiper = new Swiper('.swiper-container', {
-  
+  lazyLoading: true,
     breakpoints: {
       320: {
         slidesPerView: 2,

@@ -30,6 +30,7 @@ body {
 
 .category-nav .nav-item .nav-link:hover {
     text-align: left !important;
+    cursor: pointer ;
     padding: 12px 10px;
     color: #2c2c2c;
     background-color: rgba(179, 179, 179, 0.3) !important;
@@ -111,8 +112,22 @@ body {
     color: #333333;
     font-size: 1rem;
     font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
-
+.swiper-slide .product-card .card-body {
+    height:220px;
+    position:relative;
+}
+.swiper-slide .product-card .card-body .bottom-body {
+    position:absolute;
+    width: 88% !important;
+    bottom: 15px;
+    left: 50%; 
+    transform:translateX(-50%);
+}
 .swiper-slide .product-card .price {
     background-color: rgb(244, 244, 244);
     margin-top: 30px;
@@ -148,6 +163,7 @@ body {
     }
     .swiper-slide .product-card .card-title {
         font-size: 0.92rem;
+        
     }
     .swiper-slide .product-card .shipping .fas {
         display: none;
