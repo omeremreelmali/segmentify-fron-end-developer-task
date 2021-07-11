@@ -164,8 +164,9 @@ a{
     left: 50%;
     transform: translateX(-50%);
 }
-.toast .fa-check-circle{
-    color: #4EB467;
+.toast .fa-check{
+    color: white;
+    background-color: #4EB467;
 }
 .toast .close-btn{
     color: #FFFFFF;
