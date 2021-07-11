@@ -1,6 +1,9 @@
 $(document).ready(function () {
     let productsList;
     let productKeyList;
+
+    // Product json dosyasından veriler alınıyor ve ayrıştırılıyor.
+
     $.getJSON("./assets/product-list.json", function (data) {
         let products = data.responses[0][0].params.recommendedProducts;
         setProducts(products);
@@ -13,6 +16,8 @@ $(document).ready(function () {
     });
 
 
+    // Product json dosyasından aldığımız kategoriler kategori alanına html olarak ekleniyor.
+
     function setTabs(keys) {
         productKeyList = keys;
         var tabs = '<li class="nav-item"> <a class="nav-link active" data-indices="0">' + keys[0] + '</a> </li>';
@@ -24,20 +29,14 @@ $(document).ready(function () {
         $('.category-nav').html(tabs);
     }
 
-    $(document.body).on('click', '.nav-link', function () {
-        $('.category-nav .active').removeClass('active');
-        $(this).addClass('active');
-        var indices = $(this).attr('data-indices');
-        listProducts(indices);
-    });
-
-    $(document.body).on('click', '.add-cart', function () {
-       $('#toast').toast('show');
-    });
+    // Product json dosyasından alınan ürünler global bir değişkene atanıyor.
 
     function setProducts(products) {
         productsList = products;
     }
+
+    // Kullanıcı kategoriyi seçip tıkladığında gelen indis değeriyle ürünler bir liste olarak oluşturulup swiper sliderımıza teker teker ekleniyor.
+
     function listProducts(indices) {
         clearSwiper();
         var products = productsList[productKeyList[indices]];
@@ -67,6 +66,7 @@ $(document).ready(function () {
 
     }
 
+    // Yeni kategori seçildiğinde önceki kategoriden kalan slidelar temizleniyor.
 
     function clearSwiper() {
         if ($('.swiper-slide').length > 0) {
@@ -74,5 +74,18 @@ $(document).ready(function () {
             clearSwiper();
         }
     }
+
+    // Tıklanma olayları gerçekleştiğinde neler aypılacağı bu fonksiyonlar ile tanımlanıyor.
+
+    $(document.body).on('click', '.nav-link', function () {
+        $('.category-nav .active').removeClass('active');
+        $(this).addClass('active');
+        var indices = $(this).attr('data-indices');
+        listProducts(indices);
+    });
+
+    $(document.body).on('click', '.add-cart', function () {
+        $('#toast').toast('show');
+    });
 
 });
