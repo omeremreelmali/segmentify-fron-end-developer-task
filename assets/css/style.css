@@ -9,6 +9,9 @@
 body {
     background-color: #EBEBEB !important;
 }
+a{
+    text-decoration:none !important;
+}
 
 .category-tab-area {
     position: absolute;
@@ -151,6 +154,34 @@ body {
     font-size: 0.8rem;
     font-weight: 500;
     color: #707070;
+}
+
+
+.toast{
+    background-color: #1C232A !important;
+    border-radius:13px !important;
+    bottom: 20px !important;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.toast .fa-check-circle{
+    color: #4EB467;
+}
+.toast .close-btn{
+    color: #FFFFFF;
+}
+.toast .toast-message .toast-title{
+    font-size: .95rem !important;
+    font-weight: 500;
+}
+.toast .toast-message a{
+    font-size: .88rem !important;
+    font-weight: 400;
+    color: #8D9BC5 !important;
+    transition: opacity 0.3s;
+}
+.toast .toast-message a:hover {
+    opacity: 0.6;
 }
 
 @media screen and (min-width: 0px) and (max-width: 992px) {

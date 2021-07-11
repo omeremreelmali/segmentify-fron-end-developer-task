@@ -31,6 +31,9 @@ $(document).ready(function () {
         listProducts(indices);
     });
 
+    $(document.body).on('click', '.add-cart', function () {
+       $('#toast').toast('show');
+    });
 
     function setProducts(products) {
         productsList = products;
@@ -51,7 +54,7 @@ $(document).ready(function () {
                 '<div class="bottom-body">' +
                 '<section class="price px-3 py-2">  <span>  ' + product.priceText + ' </span>  </section>' +
                 '<section class="shipping px-2 py-0 mb-2">  ' + shipping + '  </section>' +
-                '<section class="add-cart  w-100"> <button type="button" class="btn btn-primary  w-100">Sepete Ekle</button> </section>' +
+                '<section> <button type="button" class="btn btn-primary w-100 add-cart">Sepete Ekle</button> </section>' +
                 '</div>' +
                 '</div>' +
                 '</div>' +
